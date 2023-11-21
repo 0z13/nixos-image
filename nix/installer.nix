@@ -2,8 +2,7 @@
   # We are stateless, so just default to latest.
   system.stateVersion = config.system.nixos.version;
 
-  # use latest kernel we can support to get more hardware support
-  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_testing_bcachefs;
 
   # IPMI SOL console redirection stuff
   boot.kernelParams =
