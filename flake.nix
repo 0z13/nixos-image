@@ -4,13 +4,6 @@
   inputs.nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable-small";
   inputs.nixos-2305.url = "github:NixOS/nixpkgs/release-23.05";
 
-  nixConfig.extra-substituters = [
-    "https://cache.garnix.io"
-  ];
-  nixConfig.extra-trusted-public-keys = [
-    "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-  ];
-
   outputs = { self, nixos-unstable, nixos-2305 }:
     let
       supportedSystems = [ "aarch64-linux" "x86_64-linux" ];
